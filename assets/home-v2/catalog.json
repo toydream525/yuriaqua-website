@@ -30,8 +30,8 @@
       "Android",
       "HarmonyOS"
     ],
-    "status": "0.4.0 大版本已发布",
-    "note": "大版本更新：全形态适配与体验升级。鸿蒙版已正式上架华为应用市场，支持商店一键安装。",
+    "status": "0.4.3 已发布",
+    "note": "新增抓拍与连拍，支持快捷输入工程名称和天气水印，修复批量删除闪退。",
     "cover": "/assets/home-v2/sitecam-cover.webp",
     "coverAlt": "SiteCam 工程现场拍摄功能示意",
     "url": "/sitecam/",
