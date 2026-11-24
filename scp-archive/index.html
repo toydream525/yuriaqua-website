@@ -3,91 +3,395 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SCP Archive 是 YuriAqua 开发的开源 Windows PC 端 SCP-Wiki 阅读客户端，支持中英双站切换、纯净与原版双阅读模式、分批次离线缓存与统一 Wikidot 账号登录。">
-  <meta name="theme-color" content="#f7faff">
-  <meta property="og:title" content="v1.0.0｜SCP Archive · SCP-Wiki PC 阅读客户端">
-  <meta property="og:description" content="中英双站阅读、多标签工作台、分批次离线图文缓存与统一 Wikidot 账号登录。">
+  <meta name="description" content="SCP Archive 是开源的 Windows PC 端 SCP-Wiki 档案阅读终端，支持中英双站对照、纯净与原版双模式、分批次离线缓存与统一 Wikidot 登录。">
+  <meta name="theme-color" content="#0a0b0e">
+  <meta property="og:title" content="SCP Archive // 基金会档案桌面终端 (v1.0.0)">
+  <meta property="og:description" content="控制 · 收容 · 保护 — 中英双站、纯净与原版双模式、分批次离线归档与统一 Wikidot 登录。">
+  <meta property="og:image" content="https://yuriaqua.com/assets/home-v2/scp-archive-cover.jpg">
   <meta property="og:url" content="https://yuriaqua.com/scp-archive/">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://yuriaqua.com/scp-archive/">
   <link rel="icon" href="/assets/home-v2/scp-archive-icon.png" type="image/png">
-  <link rel="stylesheet" href="/assets/harness/style.css?v=0.2.0">
-  <script defer src="/assets/harness/app.js?v=0.2.0"></script>
-  <title>v1.0.0｜SCP Archive · SCP-Wiki PC 阅读客户端</title>
+  <link rel="stylesheet" href="./style.css?v=1.0.0">
+  <title>SCP Archive // 基金会档案桌面终端 (v1.0.0)</title>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <!-- RAISA Clearance Top Bar -->
+  <div class="raisa-banner" role="banner">
+    <div class="container raisa-inner">
+      <span class="raisa-signal"><span class="pulse-dot" aria-hidden="true"></span>RAISA TERMINAL // CLEARANCE LEVEL 2</span>
+      <span>SECURE · CONTAIN · PROTECT // OPEN SOURCE CLIENT v1.0.0</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
   <header class="site-header">
     <div class="container nav-inner">
-      <a class="brand" href="/" aria-label="返回 YuriAqua 首页"><svg class="brand-wave" viewBox="0 0 36 24" aria-hidden="true"><path d="M2 12c5-7 9-7 16 0s11 7 16 0M2 6c5-7 9-7 16 0s11 7 16 0"/></svg><span>YuriAqua</span></a>
-      <span class="brand-divider" aria-hidden="true"></span><span class="product-name">SCP Archive</span>
+      <div class="nav-brand-group">
+        <a class="brand-back" href="/" aria-label="返回 YuriAqua 首页">
+          <svg class="brand-wave" viewBox="0 0 36 24" aria-hidden="true"><path d="M2 12c5-7 9-7 16 0s11 7 16 0M2 6c5-7 9-7 16 0s11 7 16 0"/></svg>
+          <span>YuriAqua</span>
+        </a>
+        <span class="brand-slash">/</span>
+        <a class="product-mark" href="#main">
+          <img src="/assets/home-v2/scp-archive-icon.png" alt="" width="24" height="24">
+          <span>SCP ARCHIVE</span>
+        </a>
+      </div>
       <nav aria-label="页面导航" class="nav-links">
-        <a href="#features">功能</a><a href="#modes">双模式</a><a href="#offline">离线与协议</a><a href="#questions">常见问题</a>
+        <a href="#anomalies">典型收容档案</a>
+        <a href="#protocols">终端协议</a>
+        <a href="#spec">规格与许可</a>
+        <a href="#addendums">附录 FAQ</a>
       </nav>
-      <span class="nav-status">v1.0.0 · 已发布</span>
+      <span class="nav-status">v1.0.0 // WIN64</span>
     </div>
   </header>
+
   <main id="main">
+    <!-- Hero -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">SCP FOUNDATION WIKI READER · WINDOWS</p>
-          <h1>把 SCP 档案，<br><span>装进顺手的桌面阅读器。</span></h1>
-          <p class="hero-lead">专为 PC 打造的开源 SCP-Wiki 客户端，内置中文分部与英文主站双站对照、多标签阅读、纯净与原版双模式切换、按系列分批次离线缓存，以及主站与中分通用的 Wikidot 账号登录。</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="https://github.com/toydream525/scp-archive-desktop/releases/download/v1.0.0/SCP.Archive.exe">下载 Windows 便携版 <span aria-hidden="true">↗</span></a>
-            <a class="button button-secondary" href="https://github.com/toydream525/scp-archive-desktop" target="_blank" rel="noopener noreferrer">查看开源代码 <span aria-hidden="true">↗</span></a>
+          <div class="doc-tag-row">
+            <span class="doc-stamp">CLASSIFIED // OPEN SOURCE</span>
+            <span class="doc-code">ITEM #: ARCHIVE-PC-01</span>
+            <span class="doc-code">OBJECT CLASS: THAUMIEL</span>
           </div>
-          <p class="hero-meta">v1.0.0 · Windows x64 单文件免安装 · <a href="https://github.com/toydream525/scp-archive-desktop/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer">查看发布说明 ↗</a> · <a href="https://github.com/toydream525/scp-archive-desktop/blob/main/README.zh-CN.md" target="_blank" rel="noopener noreferrer">中文文档 ↗</a></p>
+          <h1>越过异常帷幕，<br><span class="accent-line">在本地终端静读档案。</span></h1>
+          <p class="hero-lead">
+            专为 PC 打造的开源 SCP 基金会维基桌面客户端。将中文分部与英文主站收束进同一座沉浸式多标签终端——支持
+            <span class="redacted" title="悬停或点击解除涂黑">深夜三点护眼暗黑排版</span>、
+            原版复杂特效无缝切回、按系列分批次离线归档，以及全站通用的 Wikidot 账号凭证，让每一份
+            <span class="redacted" title="悬停或点击解除涂黑">模因危害与收容失效记录</span>
+            都触手可及。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-crimson" href="https://github.com/toydream525/scp-archive-desktop/releases/download/v1.0.0/SCP.Archive.exe">⬇ 下载 Windows 便携版 v1.0.0</a>
+            <a class="btn btn-ghost" href="https://github.com/toydream525/scp-archive-desktop" target="_blank" rel="noopener noreferrer">GITHUB 源代码 ↗</a>
+          </div>
+          <p class="hero-meta">
+            <span>Windows x64 单文件免安装</span>
+            <span>·</span>
+            <a href="https://github.com/toydream525/scp-archive-desktop/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer">发布说明 ↗</a>
+            <span>·</span>
+            <a href="https://github.com/toydream525/scp-archive-desktop/blob/main/README.zh-CN.md" target="_blank" rel="noopener noreferrer">中文文档 ↗</a>
+            <span>·</span>
+            <a href="https://github.com/toydream525/scp-archive-desktop/blob/main/README.md" target="_blank" rel="noopener noreferrer">English README ↗</a>
+          </p>
         </div>
+
+        <aside class="dossier-frame" aria-label="档案终端概览">
+          <div class="dossier-head">
+            <span>FILE: SITE-CN-EN // DESKTOP</span>
+            <span class="stamp-red">● ACTIVE</span>
+          </div>
+          <div class="dossier-media">
+            <img src="/assets/home-v2/scp-archive-cover.jpg" width="960" height="600" alt="SCP Archive 机密档案夹与地下收容站终端">
+            <span class="dossier-overlay-stamp">ARCHIVE // ACCESS GRANTED</span>
+          </div>
+          <div class="dossier-telemetry">
+            <div class="tele-cell"><span>BRANCHES</span><strong>CN / EN</strong></div>
+            <div class="tele-cell"><span>MODES</span><strong>CLEAN + ORIGINAL</strong></div>
+            <div class="tele-cell"><span>OFFLINE</span><strong class="ok">BATCH + IMAGES</strong></div>
+            <div class="tele-cell"><span>LICENSE</span><strong>MIT + CC BY-SA 3.0</strong></div>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="features" id="features" aria-label="核心功能">
-      <div class="container feature-grid">
-        <div class="feature"><span class="feature-icon" aria-hidden="true">⇄</span><div><h2>中英双站一键对照</h2><p>CN 中文分部与 EN 主站无缝切换</p></div></div>
-        <div class="feature"><span class="feature-icon" aria-hidden="true">▤</span><div><h2>纯净 / 原版双模式</h2><p>极速排版阅读与 100% 原站特效兼得</p></div></div>
-        <div class="feature"><span class="feature-icon" aria-hidden="true">⬇</span><div><h2>分批次离线缓存</h2><p>按系列 20~200 篇断点续传与图文导出</p></div></div>
-        <div class="feature"><span class="feature-icon" aria-hidden="true">◎</span><div><h2>统一账号与代理</h2><p>Wikidot 一次登录通用，支持自定义代理与镜像</p></div></div>
-      </div>
-    </section>
-
-    <section class="section steps-section" id="modes">
+    <!-- ACS-Inspired Classification Strip -->
+    <section class="acs-section" aria-label="客户端异常分级概览">
       <div class="container">
-        <div class="section-heading centered"><p class="eyebrow">READING WORKSPACE</p><h2>从编号直达到离线收藏，一应俱全。</h2><p>兼顾极速阅读体验与 Wikidot 复杂版式的完整还原。</p></div>
-        <ol class="steps">
-          <li><span class="step-number">01</span><span class="step-icon" aria-hidden="true">⌕</span><h3>智能直达与探索</h3><p>按 <code>Ctrl+L</code> 输入 <code>173</code>、<code>CN-001</code> 或关键词即可直达或全站检索；支持系列 I–X、CN 原创目录、标签筛选与分类随机一篇。</p></li>
-          <li><span class="step-number">02</span><span class="step-icon" aria-hidden="true">Aa</span><h3>纯净与原版双模式</h3><p>纯净模式提供暗黑 / 护眼 / 明亮三套原生主题、字号版宽调节、自动大纲目录与页内查找；遇到复杂特效可一键切至原版网页模式。</p></li>
-          <li><span class="step-number">03</span><span class="step-icon" aria-hidden="true">⬇</span><h3>离线分批下载与导出</h3><p>支持按系列每批 20 / 50 / 100 / 200 篇分批离线缓存、跳过已缓存断点续传与图片本地化，并支持一键导出 Markdown 或单文件 HTML。</p></li>
-        </ol>
-        <div class="resource-strip">
-          <div><strong>遵循 SCP 官方 CC BY-SA 3.0 协议</strong><p>本仓库不内置任何 SCP 原文或受限图片；所有在线/缓存/导出文档均源自 SCP 基金会维基，并保留原文链接与 CC BY-SA 3.0 署名。</p></div>
-          <div class="resource-links"><a href="https://scp-wiki-cn.wikidot.com/" target="_blank" rel="noopener noreferrer">SCP 基金会中文分部 ↗</a><a href="https://scp-wiki.wikidot.com/licensing-guide" target="_blank" rel="noopener noreferrer">SCP 官方授权指南 ↗</a></div>
+        <div class="acs-bar">
+          <div class="acs-cell">
+            <span class="acs-label">ITEM # // 项目编号</span>
+            <span class="acs-value crimson">SCP-ARCHIVE-1.0</span>
+            <span class="acs-sub">Windows x64 独立桌面终端</span>
+          </div>
+          <div class="acs-cell">
+            <span class="acs-label">CONTAINMENT // 双站覆盖</span>
+            <span class="acs-value">CN 中文 ⇄ EN 主站</span>
+            <span class="acs-sub">单篇文档一键双语对照</span>
+          </div>
+          <div class="acs-cell">
+            <span class="acs-label">DISRUPTION // 阅读双模</span>
+            <span class="acs-value">纯净排版 · 原版特效</span>
+            <span class="acs-sub">一键全展开折叠块与页内检索</span>
+          </div>
+          <div class="acs-cell">
+            <span class="acs-label">RISK // 离线与凭证</span>
+            <span class="acs-value">分批缓存 · 断点续传</span>
+            <span class="acs-sub">Wikidot 统一登录 · 自定义代理</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section qwen-section" id="offline">
-      <div class="container qwen-grid">
-        <div class="qwen-copy"><p class="eyebrow">V1.0.0 RELEASE</p><h2>免费、开源、可扩展多语种。</h2><p>客户端内置简体中文与英文界面热切换，并预留了模块化的多语言包（i18n）与分部站点注册接口，后续可便捷扩展日文分部（SCP-JP）等其他语言分部。支持全局系统代理、直连或自定义 HTTP / SOCKS5 代理与镜像源测速。</p></div>
-        <div class="recipe-card" aria-label="v1.0.0 发行规格">
-          <div class="recipe-head"><strong>v1.0.0 发行信息</strong><span>Windows x64</span></div>
-          <div class="recipe-row"><span>运行形态</span><strong>单文件绿色便携 .exe</strong></div>
-          <div class="recipe-row"><span>支持站点</span><strong>CN 中文分部 · EN 英文主站</strong></div>
-          <div class="recipe-row"><span>客户端语言</span><strong>简体中文 · English（可扩展）</strong></div>
-          <div class="recipe-row"><span>开源协议</span><strong>代码 MIT · SCP 内容 CC BY-SA 3.0</strong></div>
-          <p>双击即可使用，收藏夹、阅读进度与离线缓存均保存在本机用户目录。</p>
+    <!-- Contained Anomalies / SCP Monsters Showcase -->
+    <section class="section" id="anomalies" aria-labelledby="anomalies-heading">
+      <div class="container">
+        <div class="sec-head">
+          <div>
+            <p class="sec-eyebrow">CONTAINMENT WING // ARCHIVE SPECIMENS</p>
+            <h2 id="anomalies-heading">从这里进入异常档案库</h2>
+          </div>
+          <p class="sec-note">在客户端按 <code>Ctrl+L</code> 输入编号（如 <code>049</code>、<code>682</code>、<code>093</code>、<code>3008</code>）即可直达阅读，或一键离线打包整组系列。</p>
+        </div>
+
+        <figure class="anomaly-banner">
+          <img src="./anomalies-banner.jpg" width="1280" height="720" loading="lazy" alt="地下收容走廊概念插画：疫医剪影、红海裂镜与不灭孽蜥钢板爪痕">
+          <figcaption class="anomaly-banner-caption">
+            <span><strong>SECTOR-19 OBSERVATION CORRIDOR</strong> // BAY-01: SCP-049 · BAY-02: SCP-093 · BAY-03: SCP-682</span>
+            <span>ORIGINAL DERIVATIVE ART · CC BY-SA 3.0</span>
+          </figcaption>
+        </figure>
+
+        <div class="anomaly-grid">
+          <article class="anomaly-card">
+            <div class="anomaly-top">
+              <span class="anomaly-id">SCP-049</span>
+              <span class="class-badge euclid">EUCLID</span>
+            </div>
+            <h3 class="anomaly-name">疫医 · The Plague Doctor</h3>
+            <p class="anomaly-desc">身着鸟嘴长袍的人形异常，执着于清除其口中的「瘟疫」。与其直接接触将导致 <span class="redacted">生命体征瞬间中止</span>，并产生不可逆的复生效应。</p>
+            <div class="anomaly-foot">
+              <span>直达输入：<code>049</code></span>
+              <a href="https://scp-wiki-cn.wikidot.com/scp-049" target="_blank" rel="noopener noreferrer">维基原档 ↗</a>
+            </div>
+          </article>
+
+          <article class="anomaly-card">
+            <div class="anomaly-top">
+              <span class="anomaly-id">SCP-093</span>
+              <span class="class-badge euclid">EUCLID</span>
+            </div>
+            <h3 class="anomaly-name">红海物件 · Red Sea Object</h3>
+            <p class="anomaly-desc">一枚能随持握者悔恨程度变色的红色朱砂圆盘。将其贴合镜面后可步入 <span class="redacted">被「不洁者」笼罩的荒芜世界</span>，五色测试记录层层递进。</p>
+            <div class="anomaly-foot">
+              <span>直达输入：<code>093</code></span>
+              <a href="https://scp-wiki-cn.wikidot.com/scp-093" target="_blank" rel="noopener noreferrer">维基原档 ↗</a>
+            </div>
+          </article>
+
+          <article class="anomaly-card">
+            <div class="anomaly-top">
+              <span class="anomaly-id">SCP-682</span>
+              <span class="class-badge keter">KETER</span>
+            </div>
+            <h3 class="anomaly-name">不灭孽蜥 · Hard-to-Destroy Reptile</h3>
+            <p class="anomaly-desc">极端敌视一切生命体的高智能爬虫类异常，具备恐怖的再生与环境适应能力。必须长期浸泡于高浓度盐酸收容池，任何 <span class="redacted">处决实验均告失败</span>。</p>
+            <div class="anomaly-foot">
+              <span>直达输入：<code>682</code></span>
+              <a href="https://scp-wiki-cn.wikidot.com/scp-682" target="_blank" rel="noopener noreferrer">维基原档 ↗</a>
+            </div>
+          </article>
+
+          <article class="anomaly-card">
+            <div class="anomaly-top">
+              <span class="anomaly-id">SCP-096</span>
+              <span class="class-badge euclid">EUCLID</span>
+            </div>
+            <h3 class="anomaly-name">「羞涩的人」· The "Shy Guy"</h3>
+            <p class="anomaly-desc">无论相隔多远，哪怕仅通过监控画面或像素级照片目击其面部，对象都将进入不可阻挡的狂暴追猎状态——<span class="redacted">四个像素，四个该死的像素</span>。</p>
+            <div class="anomaly-foot">
+              <span>直达输入：<code>096</code></span>
+              <a href="https://scp-wiki-cn.wikidot.com/scp-096" target="_blank" rel="noopener noreferrer">维基原档 ↗</a>
+            </div>
+          </article>
+
+          <article class="anomaly-card">
+            <div class="anomaly-top">
+              <span class="anomaly-id">SCP-3008</span>
+              <span class="class-badge euclid">EUCLID</span>
+            </div>
+            <h3 class="anomaly-name">非常普通的老宜家 · Infinite IKEA</h3>
+            <p class="anomaly-desc">入口随时消失的无尽家具卖场内部空间。每当广播响起「商场现已打烊，请离开建筑」，无面店员便会在熄灯后 <span class="redacted">在货架走廊间展开巡猎</span>。</p>
+            <div class="anomaly-foot">
+              <span>直达输入：<code>3008</code></span>
+              <a href="https://scp-wiki-cn.wikidot.com/scp-3008" target="_blank" rel="noopener noreferrer">维基原档 ↗</a>
+            </div>
+          </article>
+
+          <article class="anomaly-card">
+            <div class="anomaly-top">
+              <span class="anomaly-id">SCP-055</span>
+              <span class="class-badge keter">KETER</span>
+            </div>
+            <h3 class="anomaly-name">【未知】· [unknown]</h3>
+            <p class="anomaly-desc">一座自我隐匿的逆模因异常。观察者无法记住它的任何正面属性，我们唯一能够确认的事实只有一条：<span class="redacted">它不是球形的</span>。</p>
+            <div class="anomaly-foot">
+              <span>直达输入：<code>055</code></span>
+              <a href="https://scp-wiki-cn.wikidot.com/scp-055" target="_blank" rel="noopener noreferrer">维基原档 ↗</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section faq-section" id="questions"><div class="container"><div class="section-heading"><p class="eyebrow">COMMON QUESTIONS</p><h2>常见问题</h2></div><div class="faq-grid">
-      <details><summary>英文主站和中文分部的账号登录是否共用？</summary><p>是的。英文主站、中文分部及其他分部均托管在 Wikidot 平台，共用同一个 Wikidot 账号与登录态。点击右上角「登录」通过官方窗口登录一次即可全站通用，客户端不会读取或明文保存密码。</p></details>
-      <details><summary>如何批量下载文档留着离线看？</summary><p>打开左侧「离线」面板，点击「分批下载」，选择目标系列与每批数量（20 / 50 / 100 / 200 篇）即可顺序下载。默认勾选「跳过已缓存」，随时停止后下次可断点续下，并可选择是否同步本地化文章内图片。</p></details>
-      <details><summary>国内访问 Wikidot 较慢怎么办？</summary><p>可在右上角「设置」中配置系统代理或自定义 HTTP / SOCKS5 代理，也可以填写自定义镜像域名，并支持一键测试中英文主站与 Crom 搜索接口的连通性与延迟。</p></details>
-      <details><summary>项目遵循什么开源与版权协议？</summary><p>客户端源代码以 MIT 协议开源；所有 SCP 基金会文档内容、概念及衍生标志均严格遵循知识共享 署名-相同方式共享 3.0（CC BY-SA 3.0）协议，版权归 SCP 基金会维基与各位原作者所有。</p></details>
-    </div></div></section>
+    <!-- Core Protocols (Features) -->
+    <section class="section" id="protocols" aria-labelledby="protocols-heading">
+      <div class="container">
+        <div class="sec-head">
+          <div>
+            <p class="sec-eyebrow">SPECIAL CONTAINMENT PROTOCOLS</p>
+            <h2 id="protocols-heading">终端核心能力</h2>
+          </div>
+          <p class="sec-note">既保留浏览长篇怪谈档案时的沉静专注，又不牺牲任何 Wikidot 复杂版式、互动页面与多标签效率。</p>
+        </div>
+
+        <div class="protocol-grid">
+          <article class="protocol-card">
+            <div class="proto-num">PROTOCOL // 01 <span>DUAL-BRANCH</span></div>
+            <h3>中英双站与一键对照</h3>
+            <p>内置 SCP 中文分部与英文主站，阅读任意文档时可点击顶部 <code>⇄ EN / CN</code> 直接对照原文或译文，<code>Ctrl+点击</code> 在后台新标签打开。</p>
+          </article>
+
+          <article class="protocol-card">
+            <div class="proto-num">PROTOCOL // 02 <span>DUAL-ENGINE</span></div>
+            <h3>纯净阅读 × 原版网页双模</h3>
+            <p>纯净模式提供暗黑 / 护眼纸色 / 明亮三套原生主题、字号行距版宽调节、自动大纲 TOC 与页内查找；遇到复杂特效、音频或互动 iframe 可一键切回原版模式。</p>
+          </article>
+
+          <article class="protocol-card">
+            <div class="proto-num">PROTOCOL // 03 <span>OFFLINE VAULT</span></div>
+            <h3>分批次离线下载与导出</h3>
+            <p>离线库支持按系列每批 20 / 50 / 100 / 200 篇顺序下载、自动跳过已缓存断点续传、失败自动重试与图片本地化，还可一键导出 Markdown 或单文件 HTML。</p>
+          </article>
+
+          <article class="protocol-card">
+            <div class="proto-num">PROTOCOL // 04 <span>ARCHIVE INDEX</span></div>
+            <h3>全系列目录、检索与随机跃迁</h3>
+            <p>覆盖主系列 I–X、中文原创 I–IV、001 提案、搞笑与已解明目录；接入 Crom GraphQL 接口支持全站关键词检索、分级/标签筛选与分类随机抽取。</p>
+          </article>
+
+          <article class="protocol-card">
+            <div class="proto-num">PROTOCOL // 05 <span>UNIFIED AUTH</span></div>
+            <h3>统一 Wikidot 账号登录</h3>
+            <p>主站、中分与其他分部共用同一 Wikidot 账号。通过共享持久化 Session 的官方窗口一次登录即可全站通用，绝不触碰或明文保存密码。</p>
+          </article>
+
+          <article class="protocol-card">
+            <div class="proto-num">PROTOCOL // 06 <span>TUNNEL &amp; I18N</span></div>
+            <h3>代理隧道、镜像源与多语扩展</h3>
+            <p>支持全局系统代理、直连或自定义 HTTP / SOCKS5 代理与镜像域名测速；界面支持中英热切换，并预留可扩展语言包与分部接口，方便后续加入日文分部等。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs & Licensing -->
+    <section class="section" id="spec" aria-labelledby="spec-heading">
+      <div class="container split-grid">
+        <div class="dossier-box">
+          <div>
+            <p class="sec-eyebrow">RELEASE MANIFEST // V1.0.0</p>
+            <h3 id="spec-heading">发行规格与快捷键</h3>
+            <p>单文件绿色便携版，双击即开；收藏夹、分组备注、阅读历史与进度记忆均安全保存在本机用户目录，无遥测、无广告。</p>
+          </div>
+          <div class="spec-table">
+            <div class="spec-row"><span>BUILD FORMAT</span><strong>Windows x64 单文件便携 .exe</strong></div>
+            <div class="spec-row"><span>QUICK JUMP</span><strong><code>Ctrl+L</code> 编号直达 / 关键词搜索</strong></div>
+            <div class="spec-row"><span>COLLAPSIBLES</span><strong><code>Ctrl+Shift+E</code> 一键展开全部折叠块</strong></div>
+            <div class="spec-row"><span>IN-PAGE FIND</span><strong><code>Ctrl+F</code> 查找（命中折叠块自动展开）</strong></div>
+            <div class="spec-row"><span>MULTI-TAB</span><strong><code>Ctrl+T</code> 新建 · <code>Ctrl+W</code> 关闭 · 中键新开</strong></div>
+          </div>
+        </div>
+
+        <div class="dossier-box warning-box">
+          <div>
+            <p class="sec-eyebrow">LICENSING &amp; ATTRIBUTION // COMPLIANCE</p>
+            <h3>开源声明与 CC BY-SA 3.0 协议</h3>
+            <p>本项目为社区独立开发的开源第三方客户端，客户端代码采用 <strong>MIT 协议</strong>开源；与 SCP 基金会相关的一切文档内容、专有概念及衍生徽标/插画均严格遵循 <strong>知识共享 署名-相同方式共享 3.0 未本地化版本协议（CC BY-SA 3.0）</strong>。</p>
+            <p style="margin-top:10px;">项目仓库不内置任何 SCP 维基正文或受限图片（亦不包含加藤泉 *Untitled 2004* 照片），所有文档均在使用时由官网实时获取并在阅读页与导出文件中保留原文链接和协议署名。</p>
+          </div>
+          <div class="ext-links">
+            <a href="https://github.com/toydream525/scp-archive-desktop" target="_blank" rel="noopener noreferrer">GITHUB 仓库 ↗</a>
+            <a href="https://scp-wiki-cn.wikidot.com/" target="_blank" rel="noopener noreferrer">SCP 中文分部 ↗</a>
+            <a href="https://scp-wiki.wikidot.com/" target="_blank" rel="noopener noreferrer">SCP 英文主站 ↗</a>
+            <a href="https://scp-wiki-cn.wikidot.com/licensing-guide" target="_blank" rel="noopener noreferrer">官方授权指南 ↗</a>
+            <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0 ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wikidot-Style Collapsible Addendums (FAQ) -->
+    <section class="section" id="addendums" aria-labelledby="addendums-heading">
+      <div class="container">
+        <div class="sec-head">
+          <div>
+            <p class="sec-eyebrow">ADDENDUM // FREQUENTLY ASKED QUESTIONS</p>
+            <h2 id="addendums-heading">附录：常见问题解答</h2>
+          </div>
+          <p class="sec-note">点击下方档案条即可展开或收起说明。</p>
+        </div>
+
+        <div class="addendum-list">
+          <details class="addendum" open>
+            <summary>附录 01：主站（EN）和中文分部（CN）的账号登录是否共用？</summary>
+            <div class="addendum-body">
+              <p>是的，完全共用。英文主站、中文分部以及日文等国际分部均托管在 Wikidot 平台上，共用同一套 <code>.wikidot.com</code> 账号与登录态。在客户端右上角通过官方 Wikidot 窗口登录一次即可全站通用；登录后切换至「原版」模式可直接为条目评分、查看受限页面或参与讨论区互动。</p>
+            </div>
+          </details>
+
+          <details class="addendum">
+            <summary>附录 02：如何把几百篇 SCP 分批次下载到本地一起离线看？</summary>
+            <div class="addendum-body">
+              <p>切到左侧边栏「离线」标签，点击「分批下载」，选择目标系列（例如 CN 系列 I <code>001–999</code> 或 CN 原创系列）与每批篇数（20 / 50 / 100 / 200 篇），点击开始即可。客户端采用 2 并发温和限速与单篇失败自动重试，默认跳过已缓存条目支持断点续传，每批下完会自动推进到下一批，也可按需勾选「含图片」实现彻底断网看图。</p>
+            </div>
+          </details>
+
+          <details class="addendum">
+            <summary>附录 03：遇到特殊 CSS 版式或互动解谜类 SCP（如 SCP-3125 / SCP-5999）怎么看？</summary>
+            <div class="addendum-body">
+              <p>当纯净模式检测到页面包含复杂自定义 CSS 或交互式 HTML iframe 组件时，会在文首给出提示条；只需点击顶部工具栏的「原版」按钮即可在当前标签页无缝切入独立 Chromium WebView，100% 还原原站特效与交互脚本，同时仍可使用一键全展开折叠块与进度同步。</p>
+            </div>
+          </details>
+
+          <details class="addendum">
+            <summary>附录 04：国内访问 Wikidot 较慢或图片加载失败怎么办？</summary>
+            <div class="addendum-body">
+              <p>点击右上角齿轮打开「设置」，可在「网络代理设置」中选用系统代理或自定义 HTTP / SOCKS5 代理（全局同步作用于文章抓取、原版浏览、账号登录与图片缓存），也支持自定义中英文站点镜像地址并一键测试延迟。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer"><div class="container footer-main"><div><a class="footer-brand" href="/"><svg class="brand-wave" viewBox="0 0 36 24" aria-hidden="true"><path d="M2 12c5-7 9-7 16 0s11 7 16 0M2 6c5-7 9-7 16 0s11 7 16 0"/></svg> YuriAqua</a><p>独立开发的开源 SCP-Wiki PC 阅读客户端。</p><small>社区第三方开源项目，与 SCP 基金会管理团队及 Wikidot 无隶属关系。SCP 相关内容遵循 CC BY-SA 3.0。</small></div><div class="footer-links"><a href="/">返回 YuriAqua 首页</a><a href="https://github.com/toydream525/scp-archive-desktop" target="_blank" rel="noopener noreferrer">本项目源码 ↗</a><a href="https://github.com/toydream525/scp-archive-desktop/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer">Windows 便携版 v1.0.0 ↗</a><a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0 ↗</a><span>代码许可：MIT</span></div></div><div class="container footer-bottom"><span>© 2026 YuriAqua</span><span>让好用的工具，陪伴更好的日常。</span></div></footer>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">SCP ARCHIVE // BY YURIAQUA</div>
+          <p class="footer-disclaimer">
+            社区开源第三方阅读客户端，与 SCP 基金会管理团队及 Wikidot 官方无隶属关系。客户端源码基于 MIT 协议开源；所有 SCP 基金会相关内容、标志与衍生插画遵循 CC BY-SA 3.0 协议。
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="/">← 返回 YuriAqua 首页</a>
+          <a href="https://github.com/toydream525/scp-archive-desktop" target="_blank" rel="noopener noreferrer">GitHub 源码 ↗</a>
+          <a href="https://github.com/toydream525/scp-archive-desktop/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer">下载 v1.0.0 ↗</a>
+          <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0 ↗</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 YuriAqua · OPEN SOURCE (MIT)</span>
+        <span>RAISA ARCHIVAL TERMINAL // SECURE · CONTAIN · PROTECT</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Allow clicking [数据删除] blocks on touch/desktop to toggle reveal
+    document.querySelectorAll('.redacted').forEach(function (el) {
+      el.addEventListener('click', function () {
+        el.classList.toggle('revealed');
+      });
+    });
+  </script>
 </body>
 </html>
