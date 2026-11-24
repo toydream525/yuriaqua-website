@@ -62,16 +62,19 @@
           </div>
           <div class="hero-brand-lockup">
             <svg class="scp-emblem-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="SCP Foundation Emblem">
-              <!-- Outer notched containment ring -->
-              <path d="M47 8 H73 V19 A42 42 0 0 1 97.5 34.5 L107 29 L115 43 L105.5 48.5 A42 42 0 0 1 105.5 71.5 L115 77 L107 91 L97.5 85.5 A42 42 0 0 1 73 101 V112 H47 V101 A42 42 0 0 1 22.5 85.5 L13 91 L5 77 L14.5 71.5 A42 42 0 0 1 14.5 48.5 L5 43 L13 29 L22.5 34.5 A42 42 0 0 1 47 19 Z" stroke="#e7e2d7" stroke-width="4" stroke-linejoin="miter" fill="rgba(10,11,14,0.65)" />
-              <circle cx="60" cy="60" r="34" stroke="#d92638" stroke-width="2.5" opacity="0.9" />
-              <circle cx="60" cy="60" r="16" stroke="#e7e2d7" stroke-width="4" />
-              <!-- Three inward containment arrows (-90deg, 30deg, 150deg) -->
-              <g fill="#e7e2d7">
-                <path d="M56.5 19 H63.5 V34 H69.5 L60 45.5 L50.5 34 H56.5 Z" />
-                <path d="M56.5 19 H63.5 V34 H69.5 L60 45.5 L50.5 34 H56.5 Z" transform="rotate(120 60 60)" />
-                <path d="M56.5 19 H63.5 V34 H69.5 L60 45.5 L50.5 34 H56.5 Z" transform="rotate(240 60 60)" />
+              <!-- Authentic 3-fold rotational SCP containment emblem -->
+              <circle cx="60" cy="60" r="46" stroke="#d92638" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.55" />
+              <!-- 3-fold outer notched segments & inward arrows (0deg, 120deg, 240deg) -->
+              <g id="scp-triad">
+                <!-- Top outward tab + arc shoulders -->
+                <path d="M23.5 39 A42 42 0 0 1 46 20.5 L48 10 H72 L74 20.5 A42 42 0 0 1 96.5 39" stroke="#e7e2d7" stroke-width="4.5" stroke-linecap="square" stroke-linejoin="miter" />
+                <!-- Top inward arrow -->
+                <path d="M56.5 22 H63.5 V35 H70 L60 47 L50 35 H56.5 Z" fill="#e7e2d7" />
               </g>
+              <use href="#scp-triad" transform="rotate(120 60 60)" />
+              <use href="#scp-triad" transform="rotate(240 60 60)" />
+              <!-- Inner containment core ring -->
+              <circle cx="60" cy="60" r="14.5" stroke="#d92638" stroke-width="4" />
             </svg>
             <div>
               <h1>控制 · 收容 · 保护</h1>
